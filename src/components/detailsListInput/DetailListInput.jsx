@@ -11,11 +11,12 @@ function DetailListInput({ placeholder, list, uniqueId }) {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <datalist id="opts">
-        {list.map((item, index) => (
-          <option key={item.id || uniqueId || index} value={item}>
-            {item}
-          </option>
-        ))}
+        {list &&
+          list.map((item, index) => (
+            <option key={item.id || uniqueId || index} value={item}>
+              {item}
+            </option>
+          ))}
       </datalist>
     </Fragment>
   );
